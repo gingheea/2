@@ -2,10 +2,45 @@
 //
 
 #include <iostream>
+using namespace std;
 
+struct TRAIN
+{
+    static const int STR_SIZE = 256;
+    static const int SIZE = 5;
+    int num = 0;
+    int hour = 0;
+    int minute = 0;
+    char* station = nullptr;
+};
+void Create(TRAIN* train)
+{
+    train->station = new char[train->STR_SIZE];
+}
+void Init(TRAIN* train)
+{
+    cout << "Nomer poyizda: ";
+    cin>>train->num;
+    cout << endl;
+    cout << "Hoduna kolu poyizd vidpravuvsya: ";
+    cin>>train->hour;
+    cout << endl;
+    cout << "Hvuluna kolu poyizd vidpravuvsya: ";
+    cin>>train->minute;
+    cout << endl;
+    cout << "Yaka stanziya pruznachennya: ";
+    cin>>train->station;
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+    int SIZE = TRAIN::SIZE;
+    TRAIN** train = new TRAIN * [SIZE];
+    for(int i=0;i<SIZE;i++)
+    {
+        train[i] = new TRAIN;
+        Create(train[i]);
+        Init(train[i]);
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
