@@ -2,49 +2,11 @@
 //
 
 #include <iostream>
+#include <ctime>
+#include "Traim.h"
 using namespace std;
 
-struct TRAIN
-{
-    static const int STR_SIZE = 256;
-    static const int SIZE = 5;
-    int num = 0;
-    int hour = 0;
-    int minute = 0;
-    char* station = nullptr;
-};
-void Create(TRAIN* train)
-{
-    train->station = new char[train->STR_SIZE];
-}
-void Init(TRAIN* train)
-{
-    cout << "Nomer poyizda: ";
-    cin>>train->num;
-    cout << endl;
-    cout << "Hoduna kolu poyizd vidpravuvsya: ";
-    cin>>train->hour;
-    cout << endl;
-    cout << "Hvuluna kolu poyizd vidpravuvsya: ";
-    cin>>train->minute;
-    cout << endl;
-    cout << "Yaka stanziya pruznachennya: ";
-    cin>>train->station;
-    cout << endl;
-}
-void Print(TRAIN* train)
-{
-    cout << endl;
-    cout << "__________________________________________________________________________________" << endl;
-    cout << "__________________________________________________________________________________"<<endl;
-    cout << "Nomer poyizda: "<<train->num<<endl;
-    cout << "Chas kolu poyizd vidpravuvsya: " << train->hour << ":"<< train->minute<<endl;
-    cout << "Stanziya pruznachennya: "<< train->station << endl;
-    cout << "__________________________________________________________________________________"<<endl;
-    cout << "__________________________________________________________________________________" << endl;
-    cout << endl;
-    cout << endl;
-}
+
 int main()
 {
     int SIZE = TRAIN::SIZE;
