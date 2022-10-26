@@ -30,17 +30,55 @@ void Init(TRAIN* train)
     cout << endl;
     cout << "Yaka stanziya pruznachennya: ";
     cin>>train->station;
+    cout << endl;
+}
+void Print(TRAIN* train)
+{
+    cout << endl;
+    cout << "__________________________________________________________________________________" << endl;
+    cout << "__________________________________________________________________________________"<<endl;
+    cout << "Nomer poyizda: "<<train->num<<endl;
+    cout << "Chas kolu poyizd vidpravuvsya: " << train->hour << ":"<< train->minute<<endl;
+    cout << "Stanziya pruznachennya: "<< train->station << endl;
+    cout << "__________________________________________________________________________________"<<endl;
+    cout << "__________________________________________________________________________________" << endl;
+    cout << endl;
+    cout << endl;
 }
 int main()
 {
     int SIZE = TRAIN::SIZE;
     TRAIN** train = new TRAIN * [SIZE];
+    int counter = 1;
     for(int i=0;i<SIZE;i++)
     {
         train[i] = new TRAIN;
         Create(train[i]);
+        cout << "Init poizda " << counter << endl;
         Init(train[i]);
+        cout << endl;
+        counter++;
     }
+  for(int j=0;j<SIZE;j++)
+  {
+      Print(train[j]);
+  }
+  int ch = 0;
+
+    cout << "Vvedit nomer poyizda pro yakuy hochete pobachutu inf: ";
+    cin >> ch;
+    cout << endl;
+
+for(int a=0;a<SIZE;a++)
+{
+    if(train[a]->num==ch)
+    {
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+        Print(train[a]);
+        cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+    }
+
+}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
